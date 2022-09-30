@@ -8,9 +8,13 @@ describe 'spell check' do
         end
     end
 
-    context 'when words are entered' do
-        it 'returns words' do
-            expect(spell_check("hello").to eq("hello"))
+    context 'when words with the correct spelling are entered' do
+        it 'returns a word' do
+            expect(spell_check("hello")).to eq("hello")
         end
+        it 'return multiple words' do
+            expect(spell_check("These words are spelt correctly")).to eq("These words are spelt correctly")
+        end
+
     end
 end
